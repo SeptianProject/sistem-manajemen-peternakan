@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::view('/', 'landing');
+Route::view('/landing', 'landing');
+
 Route::view('/login', 'auth.login')->name('login');
 Route::view('/register', 'auth.register')->name('register');
 
@@ -12,3 +15,5 @@ Route::view('/register', 'auth.register')->name('register');
 Route::post('/login', fn () => redirect('/ternak'))->name('login.attempt');
 Route::post('/register', fn () => redirect('/ternak'))->name('register.store');
 Route::post('/logout', fn () => redirect('/login'))->name('logout');
+
+// Route::view('/', 'landing');
