@@ -16,10 +16,10 @@ return new class extends Migration {
             $table->timestamps();
 
             $table->foreign('client_id')
-                ->references('id')->on('client');
+                ->references('id')->on('clients');
 
             $table->foreign('user_id')
-                ->references('id')->on('user');
+                ->references('id')->on('users');
 
             $table->foreign('jabatan_id')
                 ->references('id')->on('jabatan');

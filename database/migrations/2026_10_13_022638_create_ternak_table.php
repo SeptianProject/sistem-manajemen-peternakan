@@ -28,7 +28,7 @@ return new class extends Migration {
             $table->timestamps();
 
             $table->foreign('client_id')
-                ->references('id')->on('client');
+                ->references('id')->on('clients');
 
             $table->foreign('jenis_ternak_id')
                 ->references('id')->on('jenis_ternak');
