@@ -11,26 +11,30 @@
     <div class="auth-message auth-message--error">{{ $errors->first() }}</div>
     @endif
 
-    <form action="{{ route('register.store') }}" method="post" novalidate>
+    <form action="{{ route('register.store') }}" method="post" class="auth-form--compact" novalidate>
         @csrf
-        <div class="auth-field">
-            <label for="nama" class="auth-label">Nama</label>
-            <input type="text" id="nama" name="nama" class="form-control auth-control" maxlength="100" required value="{{ old('nama') }}" />
+        <div class="auth-grid auth-grid--2">
+            <div class="auth-field">
+                <label for="nama" class="auth-label">Nama</label>
+                <input type="text" id="nama" name="nama" class="form-control auth-control" maxlength="100" required value="{{ old('nama') }}" />
+            </div>
+
+            <div class="auth-field">
+                <label for="no_telp" class="auth-label">Nomor Telepon</label>
+                <input type="text" id="no_telp" name="no_telp" class="form-control auth-control" maxlength="20" value="{{ old('no_telp') }}" />
+            </div>
         </div>
 
-        <div class="auth-field">
-            <label for="no_telp" class="auth-label">Nomor Telepon</label>
-            <input type="text" id="no_telp" name="no_telp" class="form-control auth-control" maxlength="20" value="{{ old('no_telp') }}" />
-        </div>
+        <div class="auth-grid auth-grid--2">
+            <div class="auth-field">
+                <label for="username" class="auth-label">Username</label>
+                <input type="text" id="username" name="username" class="form-control auth-control" minlength="4" required value="{{ old('username') }}" />
+            </div>
 
-        <div class="auth-field">
-            <label for="username" class="auth-label">Username</label>
-            <input type="text" id="username" name="username" class="form-control auth-control" minlength="4" required value="{{ old('username') }}" />
-        </div>
-
-        <div class="auth-field">
-            <label class="auth-label">Role</label>
-            <input type="text" class="form-control auth-control" value="Pemilik" readonly />
+            <div class="auth-field">
+                <label class="auth-label">Role</label>
+                <input type="text" class="form-control auth-control" value="Pemilik" readonly />
+            </div>
         </div>
 
         <div class="auth-grid auth-grid--2">
@@ -47,7 +51,6 @@
                         </span>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
 
