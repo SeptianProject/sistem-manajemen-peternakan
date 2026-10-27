@@ -1,18 +1,18 @@
 <div>
-@extends('layouts.auth')
+    @extends('layouts.auth')
 
-@section('title', 'Masuk')
+    @section('title', 'Masuk')
 
-@section('content')
+    @section('content')
     <h2 class="auth-title">Masuk</h2>
     <p class="auth-subtitle">Selamat datang kembali! Silakan masuk untuk melanjutkan.</p>
 
     @if ($errors->any())
-        <div class="auth-message auth-message--error">{{ $errors->first() }}</div>
+    <div class="auth-message auth-message--error">{{ $errors->first() }}</div>
     @endif
 
     @if (session('success'))
-        <div class="auth-message auth-message--success">{{ session('success') }}</div>
+    <div class="auth-message auth-message--success">{{ session('success') }}</div>
     @endif
 
     <form action="{{ route('login.attempt') }}" method="post" novalidate>
@@ -32,5 +32,5 @@
 
     <p class="auth-divider">Belum punya akun?</p>
     <p class="auth-footer"><a href="{{ route('register') }}" class="auth-link">Daftar sekarang</a></p>
-@endsection
+    @endsection
 </div>
