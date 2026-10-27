@@ -14,23 +14,27 @@
     <form action="{{ route('register.store') }}" method="post" novalidate>
         @csrf
         <div class="auth-field">
+            <label for="nama" class="auth-label">Nama</label>
+            <input type="text" id="nama" name="nama" class="form-control auth-control" maxlength="100" required value="{{ old('nama') }}" />
+        </div>
+
+        <div class="auth-field">
+            <label for="no_telp" class="auth-label">Nomor Telepon</label>
+            <input type="text" id="no_telp" name="no_telp" class="form-control auth-control" maxlength="20" value="{{ old('no_telp') }}" />
+        </div>
+
+        <div class="auth-field">
             <label for="username" class="auth-label">Username</label>
             <input type="text" id="username" name="username" class="form-control auth-control" minlength="4" required value="{{ old('username') }}" />
         </div>
 
-        @php($roleLama = old('role', 'petugas_lapang'))
         <div class="auth-field">
-            <label for="role" class="auth-label">Role</label>
-            <select id="role" name="role" class="form-control auth-control" required>
-                <option value="petugas_lapang" @selected($roleLama === 'petugas_lapang')>Petugas Lapang</option>
-                <option value="petugas_produksi" @selected($roleLama === 'petugas_produksi')>Petugas Produksi</option>
-                <option value="dokter" @selected($roleLama === 'dokter')>Dokter</option>
-                <option value="admin" @selected($roleLama === 'admin')>Admin</option>
-            </select>
+            <label class="auth-label">Role</label>
+            <input type="text" class="form-control auth-control" value="Pemilik" readonly />
         </div>
 
         <div class="auth-grid auth-grid--2">
-            @foreach ([['password', 'Kata Sandi'], ['confirm_password', 'Konfirmasi Kata Sandi']] as [$id, $label])
+            @foreach ([['password', 'Kata Sandi'], ['password_confirmation', 'Konfirmasi Kata Sandi']] as [$id, $label])
                 <div class="auth-field">
                     <label for="{{ $id }}" class="auth-label">{{ $label }}</label>
                     <div class="auth-password-field">
