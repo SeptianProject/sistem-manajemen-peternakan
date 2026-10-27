@@ -21,4 +21,29 @@ class Client extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function kandang(): HasMany
+    {
+        return $this->hasMany(Kandang::class);
+    }
+
+    public function ternak(): HasMany
+    {
+        return $this->hasMany(Ternak::class);
+    }
+
+    public function petugas(): HasMany
+    {
+        return $this->hasMany(Petugas::class);
+    }
+
+    public function healthRecords(): HasMany
+    {
+        return $this->hasMany(HealthRecord::class);
+    }
+
+    public function productionRecords(): HasMany
+    {
+        return $this->hasMany(ProductionRecord::class);
+    }
 }

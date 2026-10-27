@@ -122,3 +122,17 @@ it('renders the superadmin dashboard after authentication', function (): void {
         ->assertSee('Manajemen Pengguna')
         ->assertSee('Superadmin');
 });
+
+it('renders the staff dashboard after authentication', function (): void {
+    $staff = User::factory()->create([
+        'role' => 'petugas',
+        'nama' => 'Petugas Demo',
+    ]);
+
+    $this->actingAs($staff)
+        ->get(route('dashboard'))
+        ->assertOk()
+        ->assertSee('Selamat datang, Petugas Demo!')
+        ->assertSee('Input Data')
+        ->assertSee('Petugas');
+});

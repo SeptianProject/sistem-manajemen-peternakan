@@ -7,6 +7,3 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::view('/', 'landing');
 Route::view('/landing', 'landing');
-Route::view('/dashboard', 'client.dashboard.index')
-    ->middleware('auth')
-    ->name('dashboard');
