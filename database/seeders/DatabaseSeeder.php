@@ -37,5 +37,7 @@ class DatabaseSeeder extends Seeder
                 'username' => 'pemilikdemo',
                 'no_telp' => '081234567890',
             ]);
+
+        $this->call(DashboardDemoSeeder::class);
     }
 }
