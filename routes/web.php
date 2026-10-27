@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landing');
 Route::view('/landing', 'landing');
+<<<<<<< HEAD
 
 Route::view('/login', 'auth.login')->name('login');
 Route::view('/register', 'auth.register')->name('register');
@@ -24,3 +25,5 @@ Route::view('/client/dashboard/jenis-produksi/{id}/edit', 'jenis-produksi.edit')
 
 // require __DIR__ . '/pages.php';
 // Route::view('/', 'landing');
+=======
+>>>>>>> cffeed3fecc12f06deaa72702ca40a674f57cc36
