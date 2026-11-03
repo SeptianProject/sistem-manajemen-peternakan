@@ -19,7 +19,9 @@
     <main class="dashboard-main">
         @include('modules.dashboard.layouts.topbar')
 
-        @yield('content')
+        <div class="dashboard-content">
+            @yield('content')
+        </div>
     </main>
 </body>
 

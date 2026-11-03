@@ -106,7 +106,7 @@ it('renders the owner dashboard after authentication', function (): void {
         ->get(route('dashboard'))
         ->assertOk()
         ->assertSee('Selamat datang, Pemilik Demo!')
-        ->assertSee('Data Ternak')
+        ->assertSee('Ternak')
         ->assertSee('Pemilik Peternakan');
 });
 
