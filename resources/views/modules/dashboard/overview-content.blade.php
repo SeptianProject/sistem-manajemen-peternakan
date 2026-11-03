@@ -30,6 +30,8 @@
             : round(($speciesCumulativeTotal - (int) $species->total) / $speciesTotal * 100, 2);
         $speciesGradientSegments[] = $speciesColors[$index % count($speciesColors)]." {$segmentStart}% {$segmentEnd}%";
     }
+
+    $speciesGradient = implode(', ', $speciesGradientSegments);
 @endphp
 
 <section class="dashboard-welcome">
@@ -123,7 +125,7 @@
             <div class="dashboard-donut-wrap">
                 <div
                     class="dashboard-donut"
-                    style="background: conic-gradient({{ implode(', ', $speciesGradientSegments) }});"
+                    @style(['background: conic-gradient('.$speciesGradient.')'])
                     role="img"
                     aria-label="Komposisi {{ $speciesTotal }} ternak berdasarkan jenis"
                 >

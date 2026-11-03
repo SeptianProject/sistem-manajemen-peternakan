@@ -74,6 +74,7 @@ it('shows live dashboard metrics only for the authenticated owners farm', functi
         ->assertSee('1 / 5 slot')
         ->assertSee('125 L')
         ->assertSee('Sapi Lokal')
+        ->assertSee('conic-gradient(#96ca50 0% 100%)', false)
         ->assertDontSee('Ternak Luar')
         ->assertDontSee('500 L');
 });
